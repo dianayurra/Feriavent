@@ -1,0 +1,214 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.contenedor{
+    width: 100%;
+	min-height: 100vh;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: minmax(90px, 90px) auto;
+	grid-template-rows: 60px auto;
+	grid-template-areas: "header header"
+						 "menu contenido";
+	transition: all .3s ease;
+}
+
+               
+
+.contenedor.active{
+    grid-template-columns: minmax(300px, 18%) auto
+}
+.header{
+    grid-area: header;
+    padding: 0 20px;
+    display: grid;
+    align-items: center;
+    grid-template-columns: auto 1fr auto;
+    background-color: rgba(241, 245, 27, 0.988);
+    justify-content: space-between;
+    grid-gap:20px ;
+    grid-template-areas: "logo busqueda iconos";
+}
+
+
+.contenedor-logo .boton-menu{
+
+border: none;
+padding: 10px;
+background: none;
+cursor: pointer;
+font-size: 40px;
+border-radius: 100px;
+width: 60px;
+height: 60px;
+margin-right:20px ;
+
+}
+.contenedor-logo .boton-menu:hover{
+    background-color: rgb(218, 225, 14);
+}
+
+
+
+
+.header .barra-busqueda{
+    grid-area: busqueda;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.header .barra-busqueda input{
+    min-width: 60%;
+    align-items: center;
+    padding: 0 15px;
+    height: 35px;
+    border: 1px solid wheat;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+}
+.header .barra-busqueda button{
+    height: 35px;
+    border: 1px solid wheat;
+    border-left: none;
+    padding: 0 25px;
+    cursor :pointer ;
+} 
+
+.header .botones-header{
+    grid-area: iconos;
+    display: flex;
+    align-items: center;
+}
+.header .botones-header button{
+    background: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    padding: 7px 12px;
+    border-radius: 100px;
+    color: black;
+    margin-right: 20px;
+    cursor: pointer;
+
+}
+.header .botones-header{
+    grid-area: iconos ;
+
+}
+/* menu lateral*/
+
+.menu-lateral{
+    grid-area: menu;
+    background-color: white;
+
+}
+.menu-lateral a{
+    display: block;
+    padding: 15px 35px;
+    color: rgb(4, 4, 4);
+    min-width: 800px;
+
+}
+.menu-lateral a:hover{
+    background: rgb(13, 212, 209) ;
+}
+.menu-lateral a.active{
+    background-color:rgb(13, 212, 209);
+    font-weight: bold;
+}
+.menu-lateral .fas{
+color: rgb(19, 18, 18);
+margin-right: 32px;
+width: 30px;
+text-align: center;
+}
+
+.menu-lateral .a.active .fas{
+    color:red ;
+    
+}
+header .botones-header .avatar img{
+    vertical-align: top;
+    width: 50px;
+    border-radius: 50px;
+}
+
+.main{
+    grid-area: contenido;
+    background-color:white ;
+    padding: 40px;
+}
+.main .titulo{
+    margin-bottom: 20px;
+}
+
+.main .grid-ventas{
+    display: grid;
+    grid-gap:40px 20px;
+    grid-template-columns: repeat(4, 1fr);
+}
+.main .grid-ventas .ventas{
+    width: 100%;
+    display: block;
+}
+.main .grid-ventas .ventas img{
+    width: 100%;
+}
+
+/*madiaqueries*/
+
+@media screen and (max-width:1200px){
+    .main .grid-ventas {
+        grid-template-columns: repeat (3, 1fr);
+    
+}
+.header .contenedor-logo .logo span{
+    display: none;
+}
+.header .barra-busqueda input{
+    min-width: 70%;
+}
+}
+@media screen and (max-width:992px) {
+.main .grid-ventas{
+    grid-template-columns: repeat(2, 1fr);
+}
+    
+}
+
+@media screen  and (max-width:768px){
+    .contenedor{
+        grid-template-rows: auto;
+    }
+    
+
+.header{
+    padding: 20px;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    grid-template-areas: "logo iconos"
+                        "busqueda busqueda";
+}
+.header .barra-busqueda input{
+    min-width: auto;
+    width: 100%;
+}
+}
+@media screen and (max-width: 576px) {
+.main .grid-ventas{
+    grid-template-columns: 1fr;
+}
+    
+}
