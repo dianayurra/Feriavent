@@ -1,0 +1,65 @@
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body {
+    background-color:blue;
+}
+
+
+
+.perfil h4{
+    font-size: 22px;
+    margin-bottom: 20px;
+
+}
+
+.controls{
+    width: 100%;
+    background-color: floralwhite;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    border: 1px;
+    font-family: 'calibri';
+    font-size: 18px;
+
+   }
+
+.perfil p {
+    height: 40px;
+    text-align: center;
+    font-size: 18px; 
+    line-height: 20px; 
+}
+
+.perfil a{
+    color:wheat;
+    text-decoration: none;
+}
+
+.perfil a:hover {
+    color:wheat;
+    text-decoration: underline;
+}
+.avatar{
+    width: 20px;
+    height: 10px;
+
+}
+
+.boton {
+ width: 10%;
+ 
+ background-color: black;
+ padding: 12px;
+ color: white;
+ margin: 8px 0;
+ font-size: 16px;
+position: relative;
+left: 30em; 
+
+}
